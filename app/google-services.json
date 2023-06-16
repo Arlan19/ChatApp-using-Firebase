@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "236651390632",
+    "project_id": "chatapp-b4679",
+    "storage_bucket": "chatapp-b4679.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236651390632:android:96d02972f916d5c053849d",
+        "android_client_info": {
+          "package_name": "com.allacsta.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236651390632-61jloo345aa14iaio569825ghlf4unb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6gXUTYREOXYnvermj7xOdsSUCq9Z49-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236651390632-61jloo345aa14iaio569825ghlf4unb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
