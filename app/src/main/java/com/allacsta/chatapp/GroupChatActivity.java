@@ -32,7 +32,7 @@ public class GroupChatActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ImageButton sendMessageButton;
     private EditText userMessageInput;
-    private ScrollView mSrollView;
+    private ScrollView mScrollView;
     private TextView displayTextMessages;
 
     private FirebaseAuth mAuth;
@@ -65,6 +65,9 @@ public class GroupChatActivity extends AppCompatActivity {
                 SaveMessageInfoToDatabase();
 
                 userMessageInput.setText("");
+
+                mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+
             }
         });
     }
@@ -115,6 +118,8 @@ public class GroupChatActivity extends AppCompatActivity {
             String chatTime = (String) ((DataSnapshot)iterator.next()).getValue();
 
             displayTextMessages.append(chatName + " :\n" + chatMessage + "\n" +chatTime + "     " + chatDate + "\n\n\n");
+
+            mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
         }
     }
 
@@ -173,6 +178,6 @@ public class GroupChatActivity extends AppCompatActivity {
         sendMessageButton = (ImageButton) findViewById(R.id.send_message_button);
         userMessageInput = (EditText) findViewById(R.id.input_group_message);
         displayTextMessages = (TextView) findViewById(R.id.group_chat_text_display);
-        mSrollView = (ScrollView) findViewById(R.id.my_scroll_view);
+        mScrollView = (ScrollView) findViewById(R.id.my_scroll_view);
     }
 }
