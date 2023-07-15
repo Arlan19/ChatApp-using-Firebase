@@ -90,6 +90,26 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void ManageChatRequest() {
+
+        chatRequestRef.child(senderUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(receiverUserID)){
+                    String request_type = snapshot.child(receiverUserID).child("request_type").getValue().toString();
+
+                    if (request_type.equals("sent")){
+                        current_State = "request_sent";
+                        sendMessageRequestButton.setText("Cancel Chat Request");
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         if (!senderUserID.equals(receiverUserID)){
             sendMessageRequestButton.setOnClickListener(new View.OnClickListener() {
                 @Override
